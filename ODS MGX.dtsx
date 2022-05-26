@@ -1,0 +1,462 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/9/2021 11:30:54 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PROD-UCUDBS10"
+  DTS:CreatorName="UCUADM\SSLVPN-SOPORTEQK"
+  DTS:DTSID="{CCFF7206-A2E3-465B-85AE-8424D55F4AC7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{C1615FA9-8D5B-4DC5-A398-6672FCD79CB6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[172.16.5.45.RRHH.MGXCONS]"
+      DTS:CreationName="ADO.NET:IBM.Data.DB2.DB2Connection, IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208"
+      DTS:DTSID="{A712FD79-9565-4EA1-81CD-A8797541F22E}"
+      DTS:ObjectName="172.16.5.45.RRHH.MGXCONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Server=172.16.5.45;User ID=MGXCONS;Database=RRHH;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9F1s9SlIQ0eMSbcHrX077QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACHLvSl0+GoaeMw4D1ehEqfAAAAAASAAACgAAAAEAAAAJw7QbdaNfsd91xfZ/J0JSgYAAAAO+1KRNYnzmjhqN+Wuw93zOlrQPBsQV3HFAAAAB7kBaP+oHyKeAeazkgSdGXZ9sVg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[172.16.5.45.RRHH.MGXCONS 1]"
+      DTS:CreationName="ADO.NET:IBM.Data.DB2.DB2Connection, IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208"
+      DTS:DTSID="{7C086496-875F-4FF5-BAA5-C1E57B2C1DEF}"
+      DTS:ObjectName="172.16.5.45.RRHH.MGXCONS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Server=172.16.5.45;User ID=MGXCONS;Database=RRHH;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9F1s9SlIQ0eMSbcHrX077QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABs+aa8vYVFHfXoppDhoaXVAAAAAASAAACgAAAAEAAAACq99SjJECBRzxqzW6CgXX0YAAAAjxK5U8+bocmmdoGaMRdx6Xi6Qlc1SCH8FAAAAHsI31b6oLX3/Q/+uA9LVrSzeqzi</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{244E8196-6455-40DF-9224-9A4576C34FBE}"
+      DTS:ObjectName="PROD-UCUDBS10\POWERBI.ODS_UCU">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{F57EF8C7-F90B-42C3-B5AF-585688232530}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="MGX_FUNCIONARIOS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT RHFUNDOCTPO AS TIPO_DOCUMENTO, 
+RHFUNDOCNRO AS NRO_DOCUMENTO, 
+RHFUNNRO AS NRO_FUN_MGX
+FROM RHFUN</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[172.16.5.45.RRHH.MGXCONS]"
+                  connectionManagerRefId="Package.ConnectionManagers[172.16.5.45.RRHH.MGXCONS]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[TIPO_DOCUMENTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].ExternalColumns[TIPO_DOCUMENTO]"
+                      length="4"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[TIPO_DOCUMENTO]"
+                      name="TIPO_DOCUMENTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[NRO_DOCUMENTO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].ExternalColumns[NRO_DOCUMENTO]"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[NRO_DOCUMENTO]"
+                      name="NRO_DOCUMENTO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[NRO_FUN_MGX]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].ExternalColumns[NRO_FUN_MGX]"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[NRO_FUN_MGX]"
+                      name="NRO_FUN_MGX"
+                      precision="14"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].ExternalColumns[TIPO_DOCUMENTO]"
+                      dataType="wstr"
+                      length="4"
+                      name="TIPO_DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].ExternalColumns[NRO_DOCUMENTO]"
+                      dataType="numeric"
+                      name="NRO_DOCUMENTO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].ExternalColumns[NRO_FUN_MGX]"
+                      dataType="numeric"
+                      name="NRO_FUN_MGX"
+                      precision="14" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[TIPO_DOCUMENTO]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[TIPO_DOCUMENTO]"
+                      name="TIPO_DOCUMENTO" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[NRO_DOCUMENTO]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[NRO_DOCUMENTO]"
+                      name="NRO_DOCUMENTO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[NRO_FUN_MGX]"
+                      dataType="numeric"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[NRO_FUN_MGX]"
+                      name="NRO_FUN_MGX"
+                      precision="14" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="ODS_MGX_FUNCIONARIOS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[ODS_MGX_FUNCIONARIOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU]"
+                  connectionManagerRefId="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].Columns[TIPO_DOCUMENTO]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="TIPO_DOCUMENTO"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[TIPO_DOCUMENTO]"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[TIPO_DOCUMENTO]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].Columns[NRO_DOCUMENTO]"
+                      cachedDataType="numeric"
+                      cachedName="NRO_DOCUMENTO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[NRO_DOCUMENTO]"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[NRO_DOCUMENTO]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].Columns[NRO_FUN_MGX]"
+                      cachedDataType="numeric"
+                      cachedName="NRO_FUN_MGX"
+                      cachedPrecision="14"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[NRO_FUN_MGX]"
+                      lineageId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET].Columns[NRO_FUN_MGX]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[TIPO_DOCUMENTO]"
+                      dataType="wstr"
+                      length="4"
+                      name="TIPO_DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[NRO_DOCUMENTO]"
+                      dataType="numeric"
+                      name="NRO_DOCUMENTO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[NRO_FUN_MGX]"
+                      dataType="numeric"
+                      name="NRO_FUN_MGX"
+                      precision="14" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
+              endId="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="137.307697344109,110.69697369579" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS"
+          TopLeft="157.307698077704,81.5454574912049" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS"
+          TopLeft="519.230788276041,111.09091310396" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
+          TopLeft="338.107698077704,102.345457491205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="181.123090198337,29.5454556127554"
+              Start="0,0"
+              End="173.623090198337,29.5454556127554">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.5615450991684,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.5615450991684,0"
+                    Point2="90.5615450991684,0"
+                    Point3="90.5615450991684,4" />
+                  <mssgle:LineSegment
+                    End="90.5615450991684,25.5454556127554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.5615450991684,25.5454556127554"
+                    Point2="90.5615450991684,29.5454556127554"
+                    Point3="94.5615450991684,29.5454556127554" />
+                  <mssgle:LineSegment
+                    End="173.623090198337,29.5454556127554" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\MGX_FUNCIONARIOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\ODS_MGX_FUNCIONARIOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
